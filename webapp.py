@@ -6,8 +6,8 @@ app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  
 def render_main():
     return render_template('home.html')
     
-@app.route("/calculate")
-def render_calculate():
+@app.route("/response")
+def render_response():
     xval = request.args['xval']
     yval = request.args['yval']
     operation = request.args['operation']
@@ -21,7 +21,7 @@ def render_calculate():
     if operation == 'div'
         answer = xval / yval        
     
-    return render_template('page1.html', response = answer)
+    return render_template('response.html', response = answer)
      
 if __name__=="__main__":
     app.run(debug=False, port=54321)
