@@ -1,10 +1,53 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 2 meta tags should come first in the head; any other head content should come *after* these tags -->
 
-{% set active_page = "page1" %}
+    <!-- Bootstrap -->
 
-{% block title %}Page 1{% endblock %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-{% block content %}
-    <!--page content-->
-    <h1>Page 1</h1>
-{% endblock %}
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>My Webpage</title>
+  </head>
+  <body>
+      <h1>Calculator</h1>
+      
+      <form action='/calculate'>
+        First Number<br>
+        <input type="text" name="xval">
+        <br><br>
+        
+        Second Number<br>
+        <input type="text" name="yval">
+        <br><br>
+        
+        <input type="radio" id="add" name="operation" value="add">
+        <label for="add"> + </label><br>
+        <input type="radio" id="sub" name="operation" value="sub">
+        <label for="sub"> - </label><br>
+        <input type="radio" id="mul" name="operation" value="mul">
+        <label for="mul"> * </label><br>
+        <input type="radio" id="div" name="operation" value="div">
+        <label for="mul"> / </label><br><br><br>
+        
+        <input type="submit">
+      </form>
+      
+      <h1>Response:</h1>
+      <p>{{ response }}</p>    
+       
+    </body>
+</html>
