@@ -24,4 +24,4 @@ def render_calculate():
     return render_template('page1.html', response = answer)
      
 if __name__=="__main__":
-    app.run(debug=False)
+    app.run(debug=False, port=54321)
