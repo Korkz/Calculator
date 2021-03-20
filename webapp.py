@@ -15,13 +15,13 @@ def render_response():
     operation = request.args['operation']
     
     if operation == 'add':
-        answer = xval+yval
+        answer = int(xval+yval)
     if operation == 'sub':
-        answer = xval-yval 
+        answer = int(xval-yval)
     if operation == 'mul':
-        answer = xval*yval 
+        answer = int(xval*yval)
     if operation == 'div':
-        answer = xval/yval        
+        answer = int(xval/yval)      
     
     return render_template('response.html', response = answer)
      
