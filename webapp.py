@@ -24,7 +24,7 @@ def render_response():
     if operation == 'div':
         answer = int(xval/yval)      
     
-    return render_template('response.html', response = answer, coloranswer = color)
+    return render_template('response.html', response = answer)
      
 if __name__=="__main__":
     app.run(debug=False, port=54321)
