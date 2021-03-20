@@ -8,8 +8,8 @@ def render_main():
     
 @app.route("/response")
 def render_response():
-    xval = request.args['xval']
-    yval = request.args['yval']
+    float xval = request.args['xval']
+    float yval = request.args['yval']
     operation = request.args['operation']
     
     if operation == 'add':
