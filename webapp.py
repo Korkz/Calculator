@@ -13,6 +13,7 @@ def render_response():
     xval = int(xval)
     yval = int(yval)
     operation = request.args['operation']
+    coloranswer = request.args['color']
     
     if operation == 'add':
         answer = int(xval+yval)
@@ -23,7 +24,7 @@ def render_response():
     if operation == 'div':
         answer = int(xval/yval)      
     
-    return render_template('response.html', response = answer)
+    return render_template('response.html', response = answer, coloranswer = color)
      
 if __name__=="__main__":
     app.run(debug=False, port=54321)
