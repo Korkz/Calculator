@@ -12,13 +12,13 @@ def render_response():
     yval = request.args['yval']
     operation = request.args['operation']
     
-    if operation == 'add'
+    if operation == 'add':
         answer = xval+yval
-    if operation == 'sub'
+    if operation == 'sub':
         answer = xval-yval 
-    if operation == 'mul'
+    if operation == 'mul':
         answer = xval*yval 
-    if operation == 'div'
+    if operation == 'div':
         answer = xval/yval        
     
     return render_template('response.html', response = answer)
