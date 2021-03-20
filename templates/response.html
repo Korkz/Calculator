@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>My Webpage</title>
   </head>
-  <body>
+  <body  style="background-color:{{ color }}">
       <h1>Calculator</h1>
       
       <form action='/response'>
@@ -33,6 +33,10 @@
         Second Number<br>
         <input type="text" name="yval">
         <br><br>
+        
+        favorite color?<br>
+        <input type="text" name="color">
+        <br><br>  
         
         <input type="radio" id="add" name="operation" value="add">
         <label for="add"> + </label><br>
