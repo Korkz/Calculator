@@ -6,14 +6,14 @@ app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  
 def render_main():
     return render_template('home.html')
     
-@app.route("/response")
+@app.route("/response", methods=['POST', 'GET'])
 def render_response():
-    xval = request.args['xval']
-    yval = request.args['yval']
+    xval = request.form['xval']
+    yval = request.form['yval']
     xval = int(xval)
     yval = int(yval)
-    operation = request.args['operation']
-    coloranswer = request.args['color']
+    operation = request.form['operation']
+    coloranswer = request.form['color']
     
     if operation == 'add':
         answer = int(xval+yval)
